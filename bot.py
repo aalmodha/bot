@@ -22,12 +22,12 @@ api = WebexTeamsAPI(access_token=WT_BOT_TOKEN)
 @app.route('/', methods=['POST'])
 def alert_received():
     raw_json = request.json()
-    message = api.messages.get(raw_json['data']['id'])
+    message = api.messages.get(raw_json['data'])
     #print(raw_json)
 
 
     if message.personEmail != 'aalmodha@webex.bot':
-        api.messages.create(toPersonEmail=messages.p, markdown='Hi, i can talk now')
+        api.messages.create(toPersonEmail=message.personEmail, markdown='Hi, i can talk now')
 
 
 
