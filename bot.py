@@ -21,15 +21,13 @@ api = WebexTeamsAPI(access_token=WT_BOT_TOKEN)
 # defining the decorater and route registration for incoming alerts
 @app.route('/', methods=['POST'])
 def alert_received():
-    raw_json = request.get_json()
-    print(raw_json)
+    raw_json = request.json()
+    message = api.messages.get(raw_json['data']['id'])
+    #print(raw_json)
 
-    # customize the behaviour of the bot here
-    message = "Hi, I am a Webex Teams bot. Have a great day ☀! "
 
-    # uncomment if you are implementing a notifier bot
-
-    api.messages.create(toPersonEmail='aalmodha@cisco.com', markdown='Hi, i can talk now')
+    if message.personEmail != 'aalmodha@webex.bot':
+    api.messages.create(toPersonEmail=messages.p, markdown='Hi, i can talk now')
 
 
 
