@@ -18,7 +18,9 @@ def alert_received():
     #print(raw_json)
 
 
-    if message.personEmail != 'aalmodha@webex.bot':
+    if message.personEmail == 'aalmodha@webex.bot':
+        pass
+    else:
         api.messages.create(toPersonId=message.personId, markdown='Hi, i can talk now')
 
  
