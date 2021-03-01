@@ -1,6 +1,7 @@
 {
   "stack": "heroku-20",
   "description": "Webex Bot deployed using Heroku Platform APIs",
+  "repository": "https://github.com/aalmodha/bot.git",
   "buildpacks": [
     {
       "url": "heroku/python"
