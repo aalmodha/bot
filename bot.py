@@ -29,7 +29,7 @@ def alert_received():
 
     # uncomment if you are implementing a notifier bot
 
-    api.messages.create(toPersonEmail='aalmodha@cisco.com', markdown=message)
+    api.messages.create(toPersonEmail='aalmodha@cisco.com', markdown='Hi, i can talk now')
 
 
 
